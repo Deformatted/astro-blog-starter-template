@@ -37,6 +37,21 @@
         color: #aaa;
       }
 
+      .album-covers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .album-covers img {
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #000;
+      }
+
       .links {
         display: flex;
         flex-wrap: wrap;
@@ -61,18 +76,17 @@
         color: #000;
       }
 
-      @media (max-width: 500px) {
+      @media (max-width: 700px) {
         h1 {
           font-size: 2.5rem;
         }
 
-        h2 {
-          font-size: 1.2rem;
+        .album-covers {
+          flex-direction: column;
         }
 
-        .links a {
-          font-size: 0.9rem;
-          padding: 0.5rem 1rem;
+        .album-covers img {
+          max-width: 90%;
         }
       }
     </style>
@@ -80,6 +94,12 @@
   <body>
     <h1>Death Ponee</h1>
     <h2>New album: <em>Waiting for Rover</em> – out now</h2>
+
+    <div class="album-covers">
+      <img src="/Final Front copy_for Digital (2).jpg" alt="Album cover front" />
+      <img src="/Final Back copy_for Digital.jpg" alt="Album cover back" />
+    </div>
+
     <div class="links">
       <a href="https://open.spotify.com/album/7DLH0CwDNEX6SX8OLLb3H5" target="_blank">Spotify</a>
       <a href="https://music.apple.com/us/album/waiting-for-rover-ep/1822589894" target="_blank">Apple Music</a>
