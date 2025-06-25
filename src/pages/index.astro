@@ -51,6 +51,25 @@
       #who {
         padding-top: 5rem;
       }
+      .who-flex {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+
+       .band-selfie img {
+         width: 300px;
+         max-width: 100%;
+         height: auto;
+         border-radius: 8px;
+         box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
+         margin-bottom: 2rem;
+      }
+
 
       .band-members {
         max-width: 700px;
@@ -264,22 +283,31 @@
   </div>
 </section> 
 <section id="who">
+<section id="who">
   <h2>Who are we?</h2>
-  <div class="band-members">
-    <div class="member">
-      <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
+
+  <div class="who-flex">
+    <div class="band-selfie">
+      <img src="/b8a55e87-f5f2-4518-9d4f-c3322910cc5b.png" alt="Band selfie" />
     </div>
-    <div class="member">
-      <span class="name">Mark Tierney</span> – Guitarist. Never seems to age — possibly immortal. Thinks fuzz pedals are a food group.
-    </div>
-    <div class="member">
-      <span class="name">George Allen</span> – Synths and vocals. Meticulous, melodic, and almost certainly has a colour-coded band spreadsheet.
-    </div>
-    <div class="member">
-      <span class="name">Nick Jennings</span> – Drums. Solid as a rock. Possibly the banjo king of Prague — but we try not to encourage him.
+
+    <div class="band-members">
+      <div class="member">
+        <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
+      </div>
+      <div class="member">
+        <span class="name">Mark Tierney</span> – Guitarist. Never seems to age — possibly immortal. Thinks fuzz pedals are a food group.
+      </div>
+      <div class="member">
+        <span class="name">George Allen</span> – Synths and vocals. Meticulous, melodic, and almost certainly has a colour-coded band spreadsheet.
+      </div>
+      <div class="member">
+        <span class="name">Nick Jennings</span> – Drums. Solid as a rock. Possibly the banjo king of Prague — but we try not to encourage him.
+      </div>
     </div>
   </div>
 </section>
+
 
   </body>
 </html>
