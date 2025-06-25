@@ -96,13 +96,16 @@
       }
       .subheading {
         font-family: 'Courier New', Courier, monospace;
-        font-size: 1rem;
-        margin-top: 3rem;
+        font-size: 1.5rem;
+        margin-top: 2rem;
         margin-bottom: 3rem;
         text-transform: uppercase;
         letter-spacing: 4px;
         color: #ffcf00;
         font-weight: bold; 
+        white-space: nowrap;       /* Prevents line breaks */
+        overflow: hidden;          /* Hides overflow */
+        text-overflow: ellipsis;   /* Adds "…" if text is too long */
       }
 
       .album-covers {
