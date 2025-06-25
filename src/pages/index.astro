@@ -94,6 +94,7 @@
         letter-spacing: 4px;
         color: #ffcf00;
       }
+
       .subheading {
         font-family: 'Courier New', Courier, monospace;
         font-size: 1rem;
@@ -107,6 +108,14 @@
         overflow: hidden;          /* Hides overflow */
         text-overflow: ellipsis;   /* Adds "…" if text is too long */
       }
+
+      /* Reduce font size on screens narrower than 500px */
+        @media (max-width: 500px) {
+         .subheading {
+         font-size: 0.75rem;
+         letter-spacing: 2px; /* Optional: reduce spacing too */
+      }
+}
 
       .album-covers {
         display: flex;
