@@ -7,7 +7,6 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet" />
 
     <style>
@@ -117,7 +116,6 @@
         .subheading {
           font-size: 0.68rem;
           letter-spacing: 1.5px;
-          text-overflow: ellipsis;
         }
       }
 
@@ -239,7 +237,7 @@
         }
       }
 
-      /* ✅ Yellow paragraph style – placed at bottom for override */
+      /* 🔥 Final fix for yellow paragraph */
       #typewriter p.yellow {
         color: #ffcf00 !important;
         font-weight: bold !important;
@@ -304,7 +302,7 @@
       </div>
     </section>
 
-    <!-- Typewriter Script -->
+    <!-- TYPEWRITER SCRIPT -->
     <script>
       const paragraphs = [
         {
@@ -331,7 +329,13 @@
 
         if (charIndex === 0) {
           currentP = document.createElement("p");
-          if (paragraphs[pIndex].class) currentP.classList.add(paragraphs[pIndex].class);
+          if (paragraphs[pIndex].class) {
+            currentP.classList.add(paragraphs[pIndex].class);
+            if (paragraphs[pIndex].class === "yellow") {
+              currentP.style.color = "#ffcf00";
+              currentP.style.fontWeight = "bold";
+            }
+          }
           container.appendChild(currentP);
         }
 
@@ -351,4 +355,3 @@
     </script>
   </body>
 </html>
-
