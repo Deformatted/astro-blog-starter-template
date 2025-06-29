@@ -7,6 +7,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet" />
 
     <style>
@@ -80,119 +81,20 @@
         font-weight: bold;
       }
 
-      h1 {
-        font-family: 'Boogaloo', sans-serif;
-        font-size: 6rem;
-        margin-bottom: 0.2rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #ffcf00;
-      }
-
-      h2 {
-        font-family: 'Boogaloo', sans-serif;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #ffcf00;
-      }
-
-      .subheading {
-        font-family: 'Oxanium', sans-serif;
-        font-size: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #f0eade;
-        font-weight: bold;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      @media (max-width: 500px) {
-        .subheading {
-          font-size: 0.68rem;
-          letter-spacing: 1.5px;
-        }
-      }
-
-      .album-covers {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      .album-covers img {
-        max-width: 300px;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px #000;
-        animation: glitch 1.4s infinite;
-        image-rendering: pixelated;
-        transition: filter 0.2s;
-      }
-
-      @keyframes glitch {
-        0% { filter: contrast(1) brightness(1); }
-        20% { filter: contrast(1.1) brightness(1.1); }
-        40% { filter: contrast(1.2) brightness(0.9); }
-        60% { filter: contrast(1.1) brightness(1); }
-        80% { filter: contrast(1) brightness(1.2); }
-        100% { filter: contrast(1) brightness(1); }
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-
-      .links a {
-        display: inline-block;
-        background-color: #252525;
-        color: #ffcf00;
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        border: 1px solid #ffcf00;
-        transition: all 0.3s ease;
-      }
-
-      .links a:hover {
-        background-color: #ffcf00;
-        color: #000;
-      }
-
-      .band-photo {
-        margin-top: 4rem;
-        display: flex;
-        justify-content: center;
-      }
-
-      .band-photo img {
-        width: 600px;
-        max-width: 90%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
-        opacity: 0;
-        animation: fadeIn 1.5s ease forwards;
-      }
-
       #typewriter {
         max-width: 600px;
+        height: 200px;
+        overflow: hidden;
         margin: 2rem auto 0 auto;
-        font-size: 1rem;
-        line-height: 1.8;
         text-align: justify;
+        line-height: 1.8;
         color: #f0eade;
+        font-size: 1rem;
+      }
+
+      #typewriter p.yellow {
+        color: #ffcf00;
+        font-weight: bold;
       }
 
       #typewriter::after {
@@ -205,48 +107,10 @@
           opacity: 0;
         }
       }
-
-      @keyframes fadeIn {
-        to { opacity: 1; }
-      }
-
-      @media (max-width: 700px) {
-        h1 {
-          font-size: 3rem;
-          letter-spacing: 2px;
-        }
-
-        h2 {
-          font-size: 1.2rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .album-covers img {
-          max-width: 45%;
-        }
-
-        .links {
-          flex-wrap: nowrap;
-          gap: 0.5rem;
-        }
-
-        .links a {
-          font-size: 0.8rem;
-          padding: 0.5rem 0.75rem;
-          white-space: nowrap;
-        }
-      }
-
-      /* 🔥 Final fix for yellow paragraph */
-      #typewriter p.yellow {
-        color: #ffcf00 !important;
-        font-weight: bold !important;
-      }
     </style>
   </head>
 
   <body>
-
     <!-- HERO SECTION -->
     <section id="home">
       <h1>Death Ponee</h1>
@@ -268,23 +132,19 @@
     <!-- BIO SECTION -->
     <section id="about">
       <h2>What are we?</h2>
-
       <div class="band-photo">
         <img src="/Band photo2.png" alt="Death Ponee band photo" />
       </div>
-
       <div id="typewriter"></div>
     </section>
 
     <!-- BAND MEMBERS SECTION -->
     <section id="who">
       <h2>Who are we?</h2>
-
       <div class="who-flex">
         <div class="band-selfie">
           <img src="/Bandselfie.jpg" alt="Band selfie" />
         </div>
-
         <div class="band-members">
           <div class="member">
             <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
@@ -302,7 +162,7 @@
       </div>
     </section>
 
-    <!-- TYPEWRITER SCRIPT -->
+    <!-- SCRIPT -->
     <script>
       const paragraphs = [
         {
@@ -324,18 +184,39 @@
       let charIndex = 0;
       let currentP;
 
+      function adjustFontToFit(container, maxHeight) {
+        const temp = document.createElement('div');
+        temp.style.visibility = 'hidden';
+        temp.style.position = 'absolute';
+        temp.style.width = container.offsetWidth + 'px';
+        temp.style.fontFamily = getComputedStyle(container).fontFamily;
+        temp.style.lineHeight = '1.8';
+        temp.style.fontSize = '1rem';
+        document.body.appendChild(temp);
+
+        for (const p of paragraphs) {
+          const para = document.createElement('p');
+          para.textContent = p.text;
+          if (p.class) para.classList.add(p.class);
+          temp.appendChild(para);
+        }
+
+        let size = 1;
+        while (temp.offsetHeight > maxHeight && size > 0.5) {
+          size -= 0.05;
+          temp.style.fontSize = size + 'rem';
+        }
+
+        container.style.fontSize = size + 'rem';
+        document.body.removeChild(temp);
+      }
+
       function typeWriter() {
         if (pIndex >= paragraphs.length) return;
 
         if (charIndex === 0) {
           currentP = document.createElement("p");
-          if (paragraphs[pIndex].class) {
-            currentP.classList.add(paragraphs[pIndex].class);
-            if (paragraphs[pIndex].class === "yellow") {
-              currentP.style.color = "#ffcf00";
-              currentP.style.fontWeight = "bold";
-            }
-          }
+          if (paragraphs[pIndex].class) currentP.classList.add(paragraphs[pIndex].class);
           container.appendChild(currentP);
         }
 
@@ -343,14 +224,15 @@
         charIndex++;
 
         if (charIndex < paragraphs[pIndex].text.length) {
-          setTimeout(typeWriter, 30);
+          setTimeout(typeWriter, 25);
         } else {
           charIndex = 0;
           pIndex++;
-          setTimeout(typeWriter, 500);
+          setTimeout(typeWriter, 400);
         }
       }
 
+      adjustFontToFit(container, 200);
       typeWriter();
     </script>
   </body>
