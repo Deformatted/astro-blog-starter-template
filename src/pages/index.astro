@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Death Ponee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
@@ -28,33 +28,54 @@
         padding-bottom: 6rem;
       }
 
-      #home h2 {
-        color: #cccccc;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
       #about {
         padding-top: 5rem;
-      }
-
-      #about p {
-        color: #e0e0d8;
-        max-width: 1000px;
-        margin: 1rem auto;
-        line-height: 1.8;
-        text-align: justify;
-        font-family: 'Oxanium', sans-serif;
-
       }
 
       #about h2 {
         color: #ffcf00;
       }
 
-      #who {
-        padding-top: 5rem;
+      .band-photo {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .band-photo img {
+        width: 600px;
+        max-width: 90%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
+        opacity: 0;
+        animation: fadeIn 1.5s ease forwards;
+      }
+
+      #typewriter {
+        max-width: 600px;
+        margin: 2rem auto 0 auto;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: justify;
+        color: #f0eade;
+      }
+
+      #typewriter::after {
+        content: '|';
+        animation: blink 0.9s steps(1) infinite;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
       }
 
       .who-flex {
@@ -83,7 +104,6 @@
         line-height: 1.8;
         text-align: justify;
         font-family: 'Oxanium', sans-serif;
-
       }
 
       .band-members .member {
@@ -94,7 +114,6 @@
         font-size: 1rem;
         line-height: 1.8;
         font-family: 'Oxanium', sans-serif;
-
       }
 
       .name {
@@ -120,27 +139,26 @@
         color: #ffcf00;
       }
 
-.subheading {
-  font-family: 'Oxanium', sans-serif;
-  font-size: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #f0eade;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+      .subheading {
+        font-family: 'Oxanium', sans-serif;
+        font-size: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #f0eade;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
       @media (max-width: 500px) {
-      .subheading {
-      font-size: 0.68rem;
-      letter-spacing: 1.5px;
-      text-overflow: ellipsis;
-  }
-}
+        .subheading {
+          font-size: 0.68rem;
+          letter-spacing: 1.5px;
+        }
+      }
 
       .album-covers {
         display: flex;
@@ -161,12 +179,24 @@
       }
 
       @keyframes glitch {
-        0% { filter: contrast(1) brightness(1); }
-        20% { filter: contrast(1.1) brightness(1.1); }
-        40% { filter: contrast(1.2) brightness(0.9); }
-        60% { filter: contrast(1.1) brightness(1); }
-        80% { filter: contrast(1) brightness(1.2); }
-        100% { filter: contrast(1) brightness(1); }
+        0% {
+          filter: contrast(1) brightness(1);
+        }
+        20% {
+          filter: contrast(1.1) brightness(1.1);
+        }
+        40% {
+          filter: contrast(1.2) brightness(0.9);
+        }
+        60% {
+          filter: contrast(1.1) brightness(1);
+        }
+        80% {
+          filter: contrast(1) brightness(1.2);
+        }
+        100% {
+          filter: contrast(1) brightness(1);
+        }
       }
 
       .links {
@@ -191,35 +221,6 @@
       .links a:hover {
         background-color: #ffcf00;
         color: #000;
-      }
-
-      .band-photo {
-        margin-top: 4rem;
-        display: flex;
-        justify-content: center;
-      }
-
-      .band-photo img {
-        width: 600px;
-        max-width: 90%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
-        opacity: 0;
-        animation: fadeIn 1.5s ease forwards;
-      }
-
-      .bio-text {
-        max-width: 600px;
-        margin: 2rem auto 0 auto;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: justify;
-        color: #f0eade;
-      }
-
-      @keyframes fadeIn {
-        to { opacity: 1; }
       }
 
       @media (max-width: 700px) {
@@ -252,7 +253,6 @@
   </head>
 
   <body>
-
     <!-- HERO SECTION -->
     <section id="home">
       <h1>Death Ponee</h1>
@@ -279,11 +279,7 @@
         <img src="/Band photo2.png" alt="Death Ponee band photo" />
       </div>
 
-      <div class="bio-text">
-        <p><strong class="name">Death Ponee is an electronic post-punk band from Prague, built on live synths, searing guitars, and uptempo drums.</strong></p>
-        <p>It started with me — a cellist-turned-synth player — writing moody tracks on a digital piano and wanting to build something raw and live. I called up people I’d played with before, picked up a synth, and we got to work.</p>
-        <p>Our first album, <em>Life’s Great Uniform</em>, was instrumental. On <em>Waiting for Rover</em>, I step up to the mic for the first time. We’re now a four-piece: two synths, guitar, drums, and a tiny 8-bit sampler called the MicroGranny making weird noises at the edge of everything.</p>
-      </div>
+      <div id="typewriter" class="bio-text"></div>
     </section>
 
     <!-- BAND MEMBERS SECTION -->
@@ -312,5 +308,26 @@
       </div>
     </section>
 
+    <!-- TYPEWRITER SCRIPT -->
+    <script>
+      const text = `
+      <p><strong class="name">Death Ponee is an electronic post-punk band from Prague, built on live synths, searing guitars, and uptempo drums.</strong></p>
+      <p>It started with me — a cellist-turned-synth player — writing moody tracks on a digital piano and wanting to build something raw and live. I called up people I’d played with before, picked up a synth, and we got to work.</p>
+      <p>Our first album, <em>Life’s Great Uniform</em>, was instrumental. On <em>Waiting for Rover</em>, I step up to the mic for the first time. We’re now a four-piece: two synths, guitar, drums, and a tiny 8-bit sampler called the MicroGranny making weird noises at the edge of everything.</p>
+      `;
+
+      let i = 0;
+      const output = document.getElementById("typewriter");
+
+      function type() {
+        if (i < text.length) {
+          output.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, 10); // Lower = faster
+        }
+      }
+
+      type();
+    </script>
   </body>
 </html>
