@@ -1,333 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Death Ponee</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Death Ponee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet" />
 
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Oxanium', sans-serif;
-        background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-        color: #ffcf00;
-        text-align: center;
-        padding: 1rem 1rem 3rem 1rem;
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oxanium', sans-serif;
+      background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+      color: #ffcf00;
+      text-align: center;
+      padding: 1rem 1rem 3rem 1rem;
+    }
+
+    section {
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-family: 'Boogaloo', sans-serif;
+      font-size: 6rem;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #ffcf00;
+    }
+
+    h2 {
+      font-family: 'Boogaloo', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #ffcf00;
+    }
+
+    .subheading {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #f0eade;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 500px) {
+      .subheading {
+        font-size: 0.68rem;
+        letter-spacing: 1.5px;
       }
+    }
 
-      section {
-        padding: 3rem 1rem;
-      }
+    .album-covers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
 
-      #home {
-        padding-bottom: 6rem;
-      }
+    .album-covers img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      animation: glitch 1.4s infinite;
+      image-rendering: pixelated;
+      transition: filter 0.2s;
+    }
 
-      #about {
-        padding-top: 5rem;
-      }
+    @keyframes glitch {
+      0% { filter: contrast(1) brightness(1); }
+      20% { filter: contrast(1.1) brightness(1.1); }
+      40% { filter: contrast(1.2) brightness(0.9); }
+      60% { filter: contrast(1.1) brightness(1); }
+      80% { filter: contrast(1) brightness(1.2); }
+      100% { filter: contrast(1) brightness(1); }
+    }
 
-      #about h2 {
-        color: #ffcf00;
-      }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-      .band-photo {
-        margin-top: 4rem;
-        display: flex;
-        justify-content: center;
-      }
+    .links a {
+      display: inline-block;
+      background-color: #252525;
+      color: #ffcf00;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      border: 1px solid #ffcf00;
+      transition: all 0.3s ease;
+    }
 
-      .band-photo img {
-        width: 600px;
-        max-width: 90%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
-        opacity: 0;
-        animation: fadeIn 1.5s ease forwards;
-      }
+    .links a:hover {
+      background-color: #ffcf00;
+      color: #000;
+    }
 
-      #typewriter {
-        max-width: 600px;
-        margin: 2rem auto 0 auto;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: justify;
-        color: #f0eade;
-      }
+    #about {
+      padding-top: 5rem;
+    }
 
-      #typewriter::after {
-        content: '|';
-        animation: blink 0.9s steps(1) infinite;
-      }
+    .band-photo {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+    }
 
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
+    .band-photo img {
+      width: 600px;
+      max-width: 90%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
 
-      @keyframes blink {
-        50% {
-          opacity: 0;
-        }
-      }
+    #typewriter {
+      max-width: 600px;
+      margin: 2rem auto 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: justify;
+      color: #f0eade;
+    }
 
-      .who-flex {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-        flex-wrap: wrap;
-      }
+    #typewriter::after {
+      content: '|';
+      animation: blink 0.9s steps(1) infinite;
+    }
 
-      .band-selfie img {
-        width: 300px;
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
-        margin-top: 2rem;
-      }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
 
-      .band-members {
-        max-width: 700px;
-        margin: 1rem auto;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: justify;
-        font-family: 'Oxanium', sans-serif;
-      }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
 
-      .band-members .member {
-        max-width: 600px;
-        margin: 1rem auto;
-        color: #f0eade;
-        text-align: justify;
-        font-size: 1rem;
-        line-height: 1.8;
-        font-family: 'Oxanium', sans-serif;
-      }
+    .who-flex {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
 
-      .name {
-        color: #ffcf00;
-        font-weight: bold;
-      }
+    .band-selfie img {
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
+      margin-top: 2rem;
+    }
 
+    .band-members {
+      max-width: 700px;
+      margin: 1rem auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .band-members .member {
+      max-width: 600px;
+      margin: 1rem auto;
+      color: #f0eade;
+      text-align: justify;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .name {
+      color: #ffcf00;
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
       h1 {
-        font-family: 'Boogaloo', sans-serif;
-        font-size: 6rem;
-        margin-bottom: 0.2rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #ffcf00;
+        font-size: 3rem;
+        letter-spacing: 2px;
       }
 
       h2 {
-        font-family: 'Boogaloo', sans-serif;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #ffcf00;
-      }
-
-      .subheading {
-        font-family: 'Oxanium', sans-serif;
-        font-size: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #f0eade;
-        font-weight: bold;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      @media (max-width: 500px) {
-        .subheading {
-          font-size: 0.68rem;
-          letter-spacing: 1.5px;
-        }
-      }
-
-      .album-covers {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 3rem;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
       }
 
       .album-covers img {
-        max-width: 300px;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px #000;
-        animation: glitch 1.4s infinite;
-        image-rendering: pixelated;
-        transition: filter 0.2s;
-      }
-
-      @keyframes glitch {
-        0% {
-          filter: contrast(1) brightness(1);
-        }
-        20% {
-          filter: contrast(1.1) brightness(1.1);
-        }
-        40% {
-          filter: contrast(1.2) brightness(0.9);
-        }
-        60% {
-          filter: contrast(1.1) brightness(1);
-        }
-        80% {
-          filter: contrast(1) brightness(1.2);
-        }
-        100% {
-          filter: contrast(1) brightness(1);
-        }
+        max-width: 45%;
       }
 
       .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
       }
 
       .links a {
-        display: inline-block;
-        background-color: #252525;
-        color: #ffcf00;
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        border: 1px solid #ffcf00;
-        transition: all 0.3s ease;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+        white-space: nowrap;
       }
+    }
+  </style>
+</head>
 
-      .links a:hover {
-        background-color: #ffcf00;
-        color: #000;
-      }
+<body>
 
-      @media (max-width: 700px) {
-        h1 {
-          font-size: 3rem;
-          letter-spacing: 2px;
-        }
+  <!-- HERO SECTION -->
+  <section id="home">
+    <h1>Death Ponee</h1>
+    <div class="subheading">New album: <em>Waiting for Rover</em> – out now!</div>
 
-        h2 {
-          font-size: 1.2rem;
-          margin-bottom: 1.5rem;
-        }
+    <div class="album-covers">
+      <img src="/Final Front copy_for Digital (2).jpg" alt="Album cover front" />
+      <img src="/Final Back copy_for Digital.jpg" alt="Album cover back" />
+    </div>
 
-        .album-covers img {
-          max-width: 45%;
-        }
+    <div class="links">
+      <a href="https://open.spotify.com/album/7DLH0CwDNEX6SX8OLLb3H5" target="_blank">Spotify</a>
+      <a href="https://music.apple.com/us/album/waiting-for-rover-ep/1822589894" target="_blank">Apple Music</a>
+      <a href="https://www.youtube.com/playlist?list=OLAK5uy_lqEcVBijeakOThABs2QHeLU7wPVUiZ3EU" target="_blank">YouTube</a>
+      <a href="https://music.amazon.com/albums/B0FF6TZ33Q" target="_blank">Amazon</a>
+    </div>
+  </section>
 
-        .links {
-          flex-wrap: nowrap;
-          gap: 0.5rem;
-        }
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>What are we?</h2>
 
-        .links a {
-          font-size: 0.8rem;
-          padding: 0.5rem 0.75rem;
-          white-space: nowrap;
-        }
-      }
-    </style>
-  </head>
+    <div class="band-photo">
+      <img src="/Band photo2.png" alt="Death Ponee band photo" />
+    </div>
 
-  <body>
-    <!-- HERO SECTION -->
-    <section id="home">
-      <h1>Death Ponee</h1>
-      <div class="subheading">New album: <em>Waiting for Rover</em> – out now!</div>
+    <div id="typewriter"></div>
+  </section>
 
-      <div class="album-covers">
-        <img src="/Final Front copy_for Digital (2).jpg" alt="Album cover front" />
-        <img src="/Final Back copy_for Digital.jpg" alt="Album cover back" />
+  <!-- WHO SECTION -->
+  <section id="who">
+    <h2>Who are we?</h2>
+
+    <div class="who-flex">
+      <div class="band-selfie">
+        <img src="/Bandselfie.jpg" alt="Band selfie" />
       </div>
 
-      <div class="links">
-        <a href="https://open.spotify.com/album/7DLH0CwDNEX6SX8OLLb3H5" target="_blank">Spotify</a>
-        <a href="https://music.apple.com/us/album/waiting-for-rover-ep/1822589894" target="_blank">Apple Music</a>
-        <a href="https://www.youtube.com/playlist?list=OLAK5uy_lqEcVBijeakOThABs2QHeLU7wPVUiZ3EU" target="_blank">YouTube</a>
-        <a href="https://music.amazon.com/albums/B0FF6TZ33Q" target="_blank">Amazon</a>
-      </div>
-    </section>
-
-    <!-- BIO SECTION -->
-    <section id="about">
-      <h2>What are we?</h2>
-
-      <div class="band-photo">
-        <img src="/Band photo2.png" alt="Death Ponee band photo" />
-      </div>
-
-      <div id="typewriter" class="bio-text"></div>
-    </section>
-
-    <!-- BAND MEMBERS SECTION -->
-    <section id="who">
-      <h2>Who are we?</h2>
-
-      <div class="who-flex">
-        <div class="band-selfie">
-          <img src="/Bandselfie.jpg" alt="Band selfie" />
+      <div class="band-members">
+        <div class="member">
+          <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
         </div>
-
-        <div class="band-members">
-          <div class="member">
-            <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
-          </div>
-          <div class="member">
-            <span class="name">Mark Tierney</span> – Guitarist. Never seems to age — possibly immortal. Thinks fuzz pedals are a food group.
-          </div>
-          <div class="member">
-            <span class="name">George Allen</span> – Synths and vocals. Meticulous, melodic, and almost certainly has a colour-coded band spreadsheet.
-          </div>
-          <div class="member">
-            <span class="name">Nick Jennings</span> – Drums. Solid as a rock. Possibly the banjo king of Prague — but we try not to encourage him.
-          </div>
+        <div class="member">
+          <span class="name">Mark Tierney</span> – Guitarist. Never seems to age — possibly immortal. Thinks fuzz pedals are a food group.
+        </div>
+        <div class="member">
+          <span class="name">George Allen</span> – Synths and vocals. Meticulous, melodic, and almost certainly has a colour-coded band spreadsheet.
+        </div>
+        <div class="member">
+          <span class="name">Nick Jennings</span> – Drums. Solid as a rock. Possibly the banjo king of Prague — but we try not to encourage him.
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TYPEWRITER SCRIPT -->
-    <script>
-      const text = `
-      <p><strong class="name">Death Ponee is an electronic post-punk band from Prague, built on live synths, searing guitars, and uptempo drums.</strong></p>
-      <p>It started with me — a cellist-turned-synth player — writing moody tracks on a digital piano and wanting to build something raw and live. I called up people I’d played with before, picked up a synth, and we got to work.</p>
-      <p>Our first album, <em>Life’s Great Uniform</em>, was instrumental. On <em>Waiting for Rover</em>, I step up to the mic for the first time. We’re now a four-piece: two synths, guitar, drums, and a tiny 8-bit sampler called the MicroGranny making weird noises at the edge of everything.</p>
-      `;
+  <!-- TYPEWRITER SCRIPT -->
+  <script>
+    const paragraphs = [
+      `<p><strong class="name">Death Ponee is an electronic post-punk band from Prague, built on live synths, searing guitars, and uptempo drums.</strong></p>`,
+      `<p>It started with me — a cellist-turned-synth player — writing moody tracks on a digital piano and wanting to build something raw and live. I called up people I’d played with before, picked up a synth, and we got to work.</p>`,
+      `<p>Our first album, <em>Life’s Great Uniform</em>, was instrumental. On <em>Waiting for Rover</em>, I step up to the mic for the first time. We’re now a four-piece: two synths, guitar, drums, and a tiny 8-bit sampler called the MicroGranny making weird noises at the edge of everything.</p>`
+    ];
 
-      let i = 0;
-      const output = document.getElementById("typewriter");
+    const container = document.getElementById("typewriter");
+    let index = 0;
 
-      function type() {
-        if (i < text.length) {
-          output.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(type, 10); // Lower = faster
-        }
+    function typeNextParagraph() {
+      if (index < paragraphs.length) {
+        const p = document.createElement("div");
+        p.style.opacity = 0;
+        p.innerHTML = paragraphs[index];
+        container.appendChild(p);
+
+        setTimeout(() => {
+          p.style.transition = "opacity 0.5s ease-in";
+          p.style.opacity = 1;
+          index++;
+          setTimeout(typeNextParagraph, 1000);
+        }, 100);
       }
+    }
 
-      type();
-    </script>
-  </body>
+    typeNextParagraph();
+  </script>
+
+</body>
 </html>
+
