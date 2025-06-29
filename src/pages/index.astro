@@ -1,12 +1,14 @@
----
----
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Death Ponee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+
     <style>
       body {
         margin: 0;
@@ -24,6 +26,7 @@
       #home {
         padding-bottom: 6rem;
       }
+
       #home h2 {
         color: #cccccc;
         white-space: nowrap;
@@ -36,7 +39,7 @@
       }
 
       #about p {
-        color: #e0e0d8; /* or try #f0eade */
+        color: #e0e0d8;
         max-width: 1000px;
         margin: 1rem auto;
         line-height: 1.8;
@@ -51,6 +54,7 @@
       #who {
         padding-top: 5rem;
       }
+
       .who-flex {
         display: flex;
         justify-content: center;
@@ -61,15 +65,14 @@
         flex-wrap: wrap;
       }
 
-       .band-selfie img {
-         width: 300px;
-         max-width: 100%;
-         height: auto;
-         border-radius: 8px;
-         box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
-         margin-bottom: 2rem;
+      .band-selfie img {
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(255, 207, 0, 0.15);
+        margin-bottom: 2rem;
       }
-
 
       .band-members {
         max-width: 700px;
@@ -81,7 +84,7 @@
       }
 
       .band-members .member {
-        max-width: 600px; /* Match .bio-text width exactly */
+        max-width: 600px;
         margin: 1rem auto;
         color: #f0eade;
         text-align: justify;
@@ -94,7 +97,6 @@
         color: #ffcf00;
         font-weight: bold;
       }
-
 
       h1 {
         font-family: 'Boogaloo', sans-serif;
@@ -122,19 +124,18 @@
         text-transform: uppercase;
         letter-spacing: 4px;
         color: #f0eade;
-        font-weight: bold; 
-        white-space: nowrap;       /* Prevents line breaks */
-        overflow: hidden;          /* Hides overflow */
-        text-overflow: ellipsis;   /* Adds "…" if text is too long */
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      /* Reduce font size on screens narrower than 500px */
-        @media (max-width: 500px) {
-         .subheading {
-         font-size: 0.75rem;
-         letter-spacing: 2px; /* Optional: reduce spacing too */
+      @media (max-width: 500px) {
+        .subheading {
+          font-size: 0.75rem;
+          letter-spacing: 2px;
+        }
       }
-}
 
       .album-covers {
         display: flex;
@@ -149,6 +150,9 @@
         height: auto;
         border-radius: 8px;
         box-shadow: 0 0 10px #000;
+        animation: glitch 1.4s infinite;
+        image-rendering: pixelated;
+        transition: filter 0.2s;
       }
 
       @keyframes glitch {
@@ -158,12 +162,6 @@
         60% { filter: contrast(1.1) brightness(1); }
         80% { filter: contrast(1) brightness(1.2); }
         100% { filter: contrast(1) brightness(1); }
-      }
-
-      .album-covers img {
-        animation: glitch 1.4s infinite;
-        image-rendering: pixelated;
-        transition: filter 0.2s;
       }
 
       .links {
@@ -205,6 +203,7 @@
         opacity: 0;
         animation: fadeIn 1.5s ease forwards;
       }
+
       .bio-text {
         max-width: 600px;
         margin: 2rem auto 0 auto;
@@ -212,7 +211,7 @@
         line-height: 1.8;
         text-align: justify;
         color: #f0eade;
-     }
+      }
 
       @keyframes fadeIn {
         to { opacity: 1; }
@@ -246,6 +245,7 @@
       }
     </style>
   </head>
+
   <body>
 
     <!-- HERO SECTION -->
@@ -268,46 +268,44 @@
 
     <!-- BIO SECTION -->
     <section id="about">
-  <h2>What are we?</h2>
+      <h2>What are we?</h2>
 
-  <div class="band-photo">
-    <img src="/Band photo2.png" alt="Death Ponee band photo" />
-  </div>
-
-  <div class="bio-text">
-    <p><strong class="name">Death Ponee is an electronic post-punk band from Prague, built on live synths, searing guitars, and uptempo drums.</strong></p>
-
-    <p>It started with me — a cellist-turned-synth player — writing moody tracks on a digital piano and wanting to build something raw and live. I called up people I’d played with before, picked up a synth, and we got to work.</p>
-
-    <p>Our first album, <em>Life’s Great Uniform</em>, was instrumental. On <em>Waiting for Rover</em>, I step up to the mic for the first time. We’re now a four-piece: two synths, guitar, drums, and a tiny 8-bit sampler called the MicroGranny making weird noises at the edge of everything.</p>
-  </div>
-</section> 
-<section id="who">
-<section id="who">
-  <h2>Who are we?</h2>
-
-  <div class="who-flex">
-    <div class="band-selfie">
-    <img src="/Bandselfie.jpg" alt="Band selfie" />
-  </div>
-
-    <div class="band-members">
-      <div class="member">
-        <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
+      <div class="band-photo">
+        <img src="/Band photo2.png" alt="Death Ponee band photo" />
       </div>
-      <div class="member">
-        <span class="name">Mark Tierney</span> – Guitarist. Never seems to age — possibly immortal. Thinks fuzz pedals are a food group.
-      </div>
-      <div class="member">
-        <span class="name">George Allen</span> – Synths and vocals. Meticulous, melodic, and almost certainly has a colour-coded band spreadsheet.
-      </div>
-      <div class="member">
-        <span class="name">Nick Jennings</span> – Drums. Solid as a rock. Possibly the banjo king of Prague — but we try not to encourage him.
-      </div>
-    </div>
-  </div>
-</section>
 
+      <div class="bio-text">
+        <p><strong class="name">Death Ponee is an electronic post-punk band from Prague, built on live synths, searing guitars, and uptempo drums.</strong></p>
+        <p>It started with me — a cellist-turned-synth player — writing moody tracks on a digital piano and wanting to build something raw and live. I called up people I’d played with before, picked up a synth, and we got to work.</p>
+        <p>Our first album, <em>Life’s Great Uniform</em>, was instrumental. On <em>Waiting for Rover</em>, I step up to the mic for the first time. We’re now a four-piece: two synths, guitar, drums, and a tiny 8-bit sampler called the MicroGranny making weird noises at the edge of everything.</p>
+      </div>
+    </section>
+
+    <!-- BAND MEMBERS SECTION -->
+    <section id="who">
+      <h2>Who are we?</h2>
+
+      <div class="who-flex">
+        <div class="band-selfie">
+          <img src="/Bandselfie.jpg" alt="Band selfie" />
+        </div>
+
+        <div class="band-members">
+          <div class="member">
+            <span class="name">Matt Ford</span> – Synths, vocals, and occasional existential dread. Former cellist, now armed with circuits and sarcasm. British, but slowly assimilating.
+          </div>
+          <div class="member">
+            <span class="name">Mark Tierney</span> – Guitarist. Never seems to age — possibly immortal. Thinks fuzz pedals are a food group.
+          </div>
+          <div class="member">
+            <span class="name">George Allen</span> – Synths and vocals. Meticulous, melodic, and almost certainly has a colour-coded band spreadsheet.
+          </div>
+          <div class="member">
+            <span class="name">Nick Jennings</span> – Drums. Solid as a rock. Possibly the banjo king of Prague — but we try not to encourage him.
+          </div>
+        </div>
+      </div>
+    </section>
 
   </body>
 </html>
